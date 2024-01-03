@@ -5,5 +5,5 @@ This repository is a sandbox to practice Rust for [keyno63](https://github.com/k
 
 ## LICENSE
 
-This repository is Apache2 License.  
+This repository is MIT License.  
 see [License](./LICENSE) file.
