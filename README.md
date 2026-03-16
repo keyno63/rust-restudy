@@ -19,6 +19,31 @@ This repository is initialized as a Rust binary project.
 - Lint: `.\dev-cargo.cmd clippy -- -D warnings`
 - Format check: `.\dev-cargo.cmd fmt -- --check`
 
+## Basic auth HTTP server sample
+
+This repo includes a sample server with:
+- `GET /` (public)
+- `GET /health` (public)
+- `GET /private` (Basic auth required)
+
+### Run
+
+```powershell
+$env:BASIC_AUTH_USER="admin"
+$env:BASIC_AUTH_PASS="password"
+.\dev-cargo.cmd run
+```
+
+`BIND_ADDR` can override bind address (default: `127.0.0.1:3000`).
+
+### Access examples
+
+```powershell
+curl http://127.0.0.1:3000/
+curl http://127.0.0.1:3000/private
+curl -u admin:password http://127.0.0.1:3000/private
+```
+
 ## LICENSE
 
 This repository is MIT License.  
